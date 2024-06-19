@@ -2,7 +2,7 @@ version: '3'
 services:
   opensora:
     build:
-      context: ./docker
+      context: .
       dockerfile: Dockerfile
     image: opensora
     ports:
