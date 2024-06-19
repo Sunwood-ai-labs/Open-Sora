@@ -1,0 +1,19 @@
+version: '3'
+services:
+  opensora:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    image: opensora
+    ports:
+      - 7860:7860
+    volumes:
+      - ./:/data
+      - .cache:/root/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    tty: true
+    stdin_open: true
